@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang='en'>
+    <meta charset="utf-8">
+	<title>title</title>
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	var i = 0;
+	function ab(){			
+		$("#anime1").animate({right:'0px'},1500);
+		$("#anime1").delay(800);
+		$("#anime1").animate({right:'-=300px'},1500,function(){
+			var path = "image/img"+(++i)%7+".jpg";
+			$(this).css("background-image",'url('+path+')');
+			ab();
+		});
+	}
+	$(document).ready(function(){
+		ab();
+	});
+	</script>
+</head>
+<body>
+	<div style="position: absolute; width: 1024px; height: 220px; z-index: 1000"><img alt="" src="image/top_text.png" /></div>
+	<div id="head"style="margin: -6px 0 0 -6px; width:1024px; height: 220px; background-image: url('image/top_bg.jpg'); overflow: hidden; position: absolute; z-index:1">
+		<div id="anime1"style="background-image: url('image/img0.jpg'); width:300px; height:220px;position:absolute; float: right; right: -300px">
+		</div>
+	</div>
+</body>
+</html>
